@@ -1,13 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&family=Oxygen&family=Ubuntu&display=swap');
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  align-items: center;
+  font-family: Nunito, Oxygen, Ubuntu, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+body::before {
+  content: "";
+  position: fixed; 
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+
+  background-image: url('../public/background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  
+  filter: blur(5px); 
+}
+
+.brand-logo {
+  width: 150px; 
+  height: auto; 
+}
+
+.navibar {
+  position: relative; 
+  overflow: hidden;   
+  display: flex;            
+  flex-direction: column;  
+  align-items: center;      
+  justify-content: center;  
+  text-align: center;       
+  background-color: rgba(204, 195, 195, 0.6); 
+  width: 100%;
+  height: 150px;
+}
+
+.navibar a {
+  font-size: 30px;
+  font-weight: bolder;
+  text-decoration: none;   
+  color: inherit;          
+  transition: color 0.3s;  
+  padding: 5px 10px;       
+}
+
+.navibar a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;      
+  left: 50%;      
+  transform: translateX(-50%) scaleX(0); 
+  height: 2px;   
+  width: 100%;
+  background-color: #a32442; 
+  transform-origin: bottom center; 
+  transition: transform 0.3s ease; 
+}
+
+.navibar a:hover::after {
+  transform: translateX(-50%) scaleX(1); 
+}
+
+.navibar a:hover {
+  color: #a32442;  
+}
+
+.navibar ul {
+  list-style-type: none;    
+  display: flex;            
+  gap: 20px;                
+  margin-top: 10px;         
+  padding: 0;               
+}
+
+.navibar li {
+  margin: 0;                
+  padding: 0;             
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+footer {
+  background-color: rgba(204, 195, 195, 0.6); 
+  text-align: center;
+  width: 100%;
+  display: flex;         
+  justify-content: center;  
+  align-items: center;    
+  height: 150px;
 }
